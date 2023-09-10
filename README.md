@@ -4,15 +4,15 @@ Module 9 Challenge - UWA/edX Data Analytics Bootcamp
 Github repository at: [https://github.com/alyssahondrade/sql-challenge.git](https://github.com/alyssahondrade/sql-challenge.git)
 
 ## Table of Contents
-1. [Introduction]
-    1. [Goal]
-    2. [Repository Structure]
-    3. [Dataset]
-2. [Approach]
-    1. [Data Modelling]
-    2. [Data Engineering]
-    3. [Data Analysis]
-3. [References]
+1. [Introduction](https://github.com/alyssahondrade/sql-challenge/tree/main#introduction)
+    1. [Goal](https://github.com/alyssahondrade/sql-challenge/tree/main#goal)
+    2. [Repository Structure](https://github.com/alyssahondrade/sql-challenge/tree/main#repository-structure)
+    3. [Dataset](https://github.com/alyssahondrade/sql-challenge/tree/main#dataset)
+2. [Approach](https://github.com/alyssahondrade/sql-challenge/tree/main#approach)
+    1. [Data Modelling](https://github.com/alyssahondrade/sql-challenge/tree/main#data-modelling)
+    2. [Data Engineering](https://github.com/alyssahondrade/sql-challenge/tree/main#data-engineering)
+    3. [Data Analysis](https://github.com/alyssahondrade/sql-challenge/tree/main#data-analysis)
+3. [References](https://github.com/alyssahondrade/sql-challenge/tree/main#references)
 
 ## Introduction
 ### Goal
