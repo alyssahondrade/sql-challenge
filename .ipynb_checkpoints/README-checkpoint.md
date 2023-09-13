@@ -63,9 +63,14 @@ Create a table schema for each CSV file. Order of import:
 6. Sales and Development departments: `employee number, last name, first name, department name`.
 7. Frequency counts (descending order) of all employee last names.
 
+#### Query Philosophy
+Where both __JOIN__ and __SUBQUERY__ are applicable, for simplicity:
+- If multiple columns are required from multiple tables, use __JOIN__.
+- If only one column is required from a different table, use __SUBQUERY__.
+
 ## References
 - [1] Data Types - Date/Time Types [https://www.postgresql.org/docs/current/datatype-datetime.html](https://www.postgresql.org/docs/current/datatype-datetime.html)
 
 - [2] How to Compare Dates in PostgreSQL [https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/](https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/)
 
-- [3] 
+- [3] SQL Join vs Subquery [https://www.geeksforgeeks.org/sql-join-vs-subquery/](https://www.geeksforgeeks.org/sql-join-vs-subquery/)
