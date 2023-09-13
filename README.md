@@ -16,7 +16,7 @@ Github repository at: [https://github.com/alyssahondrade/sql-challenge.git](http
 
 ## Introduction
 ### Goal
-Design tables in a SQL database to hold the data contained in 6 CSV files, by performing: data modelling, data engineering, and data analysis.
+Design tables in a SQL database to hold the data contained in 6 CSV files, by performing: data modelling, data engineering, and data analysis. The CSV files contains information on employees, departments, and salaries.
 
 ### Repository Structure
 `EmployeeSQL` directory contains the CSV files:
@@ -71,9 +71,18 @@ Create a table schema for each CSV file. Order of import:
     - Use an `AND` in the `WHERE` clause to refine by both constraints.
     - Use `LIKE` to filter for the correct surname.
 6. Sales department employees: `employee number, last name, first name`.
-    - 
+    - Use the `VIEW` created from __Question 4__ and filter for the given department.
 7. Sales and Development departments: `employee number, last name, first name, department name`.
+    - Use the `VIEW` created from __Question 4__ and filter for the given departments.
+    - Confirm there are unique `emp_no` by using `STRING_AGG` and `GROUP BY` as with __Question 4__.
+        - NOTE: There are no employees which belong to both departments.
+    - Drop the `VIEW` as it is no longer required.
 8. Frequency counts (descending order) of all employee last names.
+    - Use `COUNT` and `GROUP BY` to get the frequency counts.
+    - Use `ORDER BY` on the aliased frequency counts and set to `DESC`.
+    - Confirm the correct frequency counts are calculated.
+        - Store the result in a `VIEW` and create a query to `SUM` all the frequencies.
+        - Compare this result to the total number of rows in the `employees` table.
 
 #### Query Philosophy
 1. When building the query:
