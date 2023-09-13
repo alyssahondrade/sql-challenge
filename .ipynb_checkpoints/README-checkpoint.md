@@ -58,15 +58,31 @@ Create a table schema for each CSV file. Order of import:
     - Use `DATE_TRUNC` in the `WHERE` clause to get employees hired in the given year.
     - Confirm within limits by using `ORDER BY` and checking for `ASC` (start of year) and `DESC` (end of year).
 3. Manager of each department: `department number, department name, employee number, last name, first name`.
-4. Employee whose first name is `Hercules` and last name starts with `B`: `first name, last name, sex`.
-5. Sales department employees: `employee number, last name, first name`.
-6. Sales and Development departments: `employee number, last name, first name, department name`.
-7. Frequency counts (descending order) of all employee last names.
+    - Use `dept_manager` and `INNER JOIN` the tables `departments` and `employees`.
+    - Confirm the correct number of results are returned by ensuring the rows match with `dept_manager`: 24 rows.
+4. Employee with department name and number: `dept_no, emp_no, last_name, first_name, dept_name`.
+    - Use `employees` and `INNER JOIN` the tables `departments` and `employees`.
+    - Store the result in a `VIEW` for following questions.
+    - As each employee can have multiple departments, the `VIEW` result contains: 311603 rows.
+        - Use `STRING_AGG` to get a column of department names and numbers for each employee.
+        - Use `GROUP BY` on `emp_no` to get the result for each employee.
+    - Confirm the correct number of results are returned by ensuring the rows match with `employees`: 300024 rows.
+5. Employee whose first name is `Hercules` and last name starts with `B`: `first name, last name, sex`.
+    - Use an `AND` in the `WHERE` clause to refine by both constraints.
+    - Use `LIKE` to filter for the correct surname.
+6. Sales department employees: `employee number, last name, first name`.
+    - 
+7. Sales and Development departments: `employee number, last name, first name, department name`.
+8. Frequency counts (descending order) of all employee last names.
 
 #### Query Philosophy
-Where both __JOIN__ and __SUBQUERY__ are applicable, for simplicity:
-- If multiple columns are required from multiple tables, use __JOIN__.
-- If only one column is required from a different table, use __SUBQUERY__.
+1. When building the query:
+    - Identify the tables required, and determine whether a join or subquery is necessary.
+    - Apply the constraints, returning all fields.
+    - Refine the fields to return requested only.
+2. Where both __JOIN__ and __SUBQUERY__ are applicable, for simplicity:
+    - If multiple columns are required from multiple tables, use __JOIN__.
+    - If only one column is required from a different table, use __SUBQUERY__.
 
 ## References
 - [1] Data Types - Date/Time Types [https://www.postgresql.org/docs/current/datatype-datetime.html](https://www.postgresql.org/docs/current/datatype-datetime.html)
@@ -74,3 +90,7 @@ Where both __JOIN__ and __SUBQUERY__ are applicable, for simplicity:
 - [2] How to Compare Dates in PostgreSQL [https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/](https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/)
 
 - [3] SQL Join vs Subquery [https://www.geeksforgeeks.org/sql-join-vs-subquery/](https://www.geeksforgeeks.org/sql-join-vs-subquery/)
+
+- [4] How to concatenate strings of a string field in PostgreSQL 'group by' query? [https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query](https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query)
+
+- 

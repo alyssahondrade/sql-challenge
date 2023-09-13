@@ -1,5 +1,3 @@
--- DATA ANALYSIS
-
 -- Question 1
 -- List the employee number, last name, first name, sex,
 -- and salary of each employee.
@@ -38,7 +36,14 @@ FROM employees
 INNER JOIN dept_emp
 	USING(emp_no)
 INNER JOIN departments
-	USING(dept_no);
+	USING(dept_no); -- Result: 311603 rows, duplicate emp_no
+
+-- Return the result for each employee
+SELECT emp_no, last_name, first_name,
+	STRING_AGG(dept_no, ', ') AS department_numbers,
+	STRING_AGG(dept_name, ', ') AS department_names
+FROM employee_departments
+GROUP BY emp_no, last_name, first_name;
 
 -- Question 5
 -- List the first name, last name, and sex of each employee
@@ -52,7 +57,32 @@ WHERE first_name = 'Hercules'
 -- Question 6
 -- List each employee in the Sales department, including their
 -- employee number, last name, and first name.
-SELECT dept_name, emp_no, last_name, first_name
+SELECT emp_no, last_name, first_name, dept_name
 FROM employee_departments
 WHERE dept_name = 'Sales';
 
+-- Question 7
+-- List each employee in the Sales and Development departments,
+-- including their employee number, last name, first name, and
+-- department name.
+SELECT emp_no, last_name, first_name, dept_name
+FROM employee_departments
+WHERE dept_name = 'Sales'
+	OR dept_name = 'Development';
+
+DROP VIEW employee_departments; -- View no longer required.
+
+-- Question 8
+-- List the frequency counts, in descending order, of all employee
+-- last names (that is, how many employees share each last name).
+CREATE VIEW check_names AS
+SELECT last_name, COUNT(last_name) AS surname_frequency
+FROM employees
+GROUP BY last_name
+ORDER BY surname_frequency DESC;
+
+SELECT SUM(surname_frequency)
+FROM check_names;
+
+SELECT COUNT(emp_no)
+FROM employees;
