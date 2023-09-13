@@ -45,6 +45,8 @@ Inspect the CSV files and sketch an Entity Relationship Diagram (ERD).
     5. `departments` & `dept_emp`: One department applies to many employees, each department can only have one department name.
     6. `departments` & `dept_manager`: One department applies to many managers, each department can only have one department name.
 
+![ERD](https://github.com/alyssahondrade/sql-challenge/blob/main/ERD.png)
+
 ### Data Engineering
 Create a table schema for each CSV file.
 
