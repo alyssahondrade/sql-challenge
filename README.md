@@ -49,6 +49,7 @@ Inspect the CSV files and sketch an Entity Relationship Diagram (ERD).
 
 ### Data Engineering
 Create a table schema for each CSV file.
+1. Order of import: `titles`, `employees`, `departments`, 
 
 ### Data Analysis
 1. Employee details: `employee number, last name, first name, sex, salary`.
