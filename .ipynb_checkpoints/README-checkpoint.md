@@ -53,7 +53,10 @@ Create a table schema for each CSV file. Order of import:
 
 ### Data Analysis
 1. Employee details: `employee number, last name, first name, sex, salary`.
+    - Use a subquery in the `SELECT` clause to include the monetary value for `salary` using `emp_no`.
 2. Employeers hired in 1986: `first name, last name, hire date`.
+    - Use `DATE_TRUNC` in the `WHERE` clause to get employees hired in the given year.
+    - Confirm within limits by using `ORDER BY` and checking for `ASC` (start of year) and `DESC` (end of year).
 3. Manager of each department: `department number, department name, employee number, last name, first name`.
 4. Employee whose first name is `Hercules` and last name starts with `B`: `first name, last name, sex`.
 5. Sales department employees: `employee number, last name, first name`.
@@ -61,6 +64,8 @@ Create a table schema for each CSV file. Order of import:
 7. Frequency counts (descending order) of all employee last names.
 
 ## References
-- [1] QuickBD [https://www.quickdatabasediagrams.com](https://www.quickdatabasediagrams.com)
+- [1] Data Types - Date/Time Types [https://www.postgresql.org/docs/current/datatype-datetime.html](https://www.postgresql.org/docs/current/datatype-datetime.html)
 
-- [2] 
+- [2] How to Compare Dates in PostgreSQL [https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/](https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/)
+
+- [3] 
