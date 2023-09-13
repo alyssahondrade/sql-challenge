@@ -114,10 +114,12 @@ Create a table schema for each CSV file. Order of import:
 ## References
 - [1] Composite Primary Keys in PostgreSQL [https://www.commandprompt.com/education/composite-primary-keys-in-postgresql/](https://www.commandprompt.com/education/composite-primary-keys-in-postgresql/)
 
-- [2] Data Types - Date/Time Types [https://www.postgresql.org/docs/current/datatype-datetime.html](https://www.postgresql.org/docs/current/datatype-datetime.html)
+- [2] Foreign Keys [https://www.postgresql.org/docs/current/tutorial-fk.html](https://www.postgresql.org/docs/current/tutorial-fk.html)
 
-- [3] How to Compare Dates in PostgreSQL [https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/](https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/)
+- [3] Data Types - Date/Time Types [https://www.postgresql.org/docs/current/datatype-datetime.html](https://www.postgresql.org/docs/current/datatype-datetime.html)
 
-- [4] SQL Join vs Subquery [https://www.geeksforgeeks.org/sql-join-vs-subquery/](https://www.geeksforgeeks.org/sql-join-vs-subquery/)
+- [4] How to Compare Dates in PostgreSQL [https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/](https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/)
 
-- [5] How to concatenate strings of a string field in PostgreSQL 'group by' query? [https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query](https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query)
+- [5] SQL Join vs Subquery [https://www.geeksforgeeks.org/sql-join-vs-subquery/](https://www.geeksforgeeks.org/sql-join-vs-subquery/)
+
+- [6] How to concatenate strings of a string field in PostgreSQL 'group by' query? [https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query](https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query)
