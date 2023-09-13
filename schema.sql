@@ -5,12 +5,6 @@ DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS salaries;
 DROP TABLE IF EXISTS titles;
 
-CREATE TABLE departments (
-	dept_no VARCHAR(4) NOT NULL,
-	dept_name VARCHAR(20) NOT NULL,
-	PRIMARY KEY(dept_no)
-);
-
 CREATE TABLE titles (
 	title_id VARCHAR(5) NOT NULL,
 	title VARCHAR(20) NOT NULL,
@@ -26,6 +20,12 @@ CREATE TABLE employees (
 	sex VARCHAR(1),
 	hire_date DATE,
 	PRIMARY KEY(emp_no)
+);
+
+CREATE TABLE departments (
+	dept_no VARCHAR(4) NOT NULL,
+	dept_name VARCHAR(20) NOT NULL,
+	PRIMARY KEY(dept_no)
 );
 
 CREATE TABLE salaries (

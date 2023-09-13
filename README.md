@@ -48,8 +48,8 @@ Inspect the CSV files and sketch an Entity Relationship Diagram (ERD).
 ![ERD](https://github.com/alyssahondrade/sql-challenge/blob/main/ERD.png)
 
 ### Data Engineering
-Create a table schema for each CSV file.
-1. Order of import: `titles`, `employees`, `departments`, 
+Create a table schema for each CSV file. Order of import:
+    `titles`, `employees`, `departments`, `salaries`, `dept_emp`, `dept_manager`
 
 ### Data Analysis
 1. Employee details: `employee number, last name, first name, sex, salary`.
