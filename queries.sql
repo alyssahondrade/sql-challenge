@@ -32,6 +32,7 @@ INNER JOIN employees
 -- List the department number for each employee along with
 -- that employee's employee number, last name, first name,
 -- and department name.
+CREATE VIEW employee_departments AS
 SELECT dept_no, emp_no, last_name, first_name, dept_name
 FROM employees
 INNER JOIN dept_emp
@@ -51,3 +52,7 @@ WHERE first_name = 'Hercules'
 -- Question 6
 -- List each employee in the Sales department, including their
 -- employee number, last name, and first name.
+SELECT dept_name, emp_no, last_name, first_name
+FROM employee_departments
+WHERE dept_name = 'Sales';
+
