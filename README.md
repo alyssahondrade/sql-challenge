@@ -90,10 +90,12 @@ Reasons for `NOT NULL`:
 4. Employee with department name and number.
     - Use `employees` and `INNER JOIN` the tables `departments` and `employees`.
     - Store the result in a `VIEW` for following questions.
-    - As each employee can have multiple departments, the `VIEW` result contains: `311603 rows` (Note: Further investigation revealed that an employee hired for multiple departments has one `hire_date`, identified by using `GROUP BY` with `HAVING COUNT(DISTINCT hire_date) > 1`).
+    - As each employee can have multiple departments, the `VIEW` result contains: `311603 rows`.
         - Use `STRING_AGG` to get a column of department names and numbers for each employee.
         - Use `GROUP BY` on `emp_no` to get the result for each employee.
     - Confirm the correct number of results are returned by ensuring the rows match with `employees`: `300024 rows`.
+
+    (Note: Further investigation revealed that an employee hired for multiple departments has one `hire_date`, identified by using `GROUP BY` with `HAVING COUNT(DISTINCT hire_date) > 1`)
 
 5. Employee whose first name is `Hercules` and last name starts with `B`.
     - Use an `AND` in the `WHERE` clause to refine by both constraints.
