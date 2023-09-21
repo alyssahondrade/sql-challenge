@@ -137,3 +137,5 @@ Reasons for `NOT NULL`:
 - [5] SQL Join vs Subquery [https://www.geeksforgeeks.org/sql-join-vs-subquery/](https://www.geeksforgeeks.org/sql-join-vs-subquery/)
 
 - [6] How to concatenate strings of a string field in PostgreSQL 'group by' query? [https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query](https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query)
+
+- [7] SQL Style Guide (Holywell) [https://www.sqlstyle.guide](https://www.sqlstyle.guide)
