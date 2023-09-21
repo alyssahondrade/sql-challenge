@@ -19,8 +19,7 @@ CREATE TABLE employees (
 	last_name VARCHAR(30) NOT NULL,
 	sex VARCHAR(1),
 	hire_date DATE,
-	PRIMARY KEY(emp_no),
-    FOREIGN KEY 
+	PRIMARY KEY(emp_no)
 );
 
 CREATE TABLE departments (
