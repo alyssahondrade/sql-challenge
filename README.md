@@ -61,6 +61,20 @@ Create a table schema for each CSV file. Order of import:
 
 `titles`, `employees`, `departments`, `salaries`, `dept_emp`, `dept_manager`
 
+Column value lengths are chosen by inspecting the columns in the given CSV files. In general:
+1. It is assumed the current character length requirement for `title_id` and `dept_no` can handle capacity for future additions (for example, maximum of 999 departments for `dept_no`).
+
+2. Name fields, such as `title`, `first_name`, `last_name`, and `dept_name`, are allocated reasonable character lengths to:
+    - Account for current requirements (i.e. minimum is met), and
+    - Allow for future additions which may be slightly longer.
+
+Reasons for `NOT NULL`:
+1. A field that is a `PRIMARY KEY` or a `FOREIGN KEY`.
+
+2. If a table only has two fields, both fields are `NOT NULL`, otherwise what is the point of that entry.
+
+3. For the `employees` table, `first_name` and `last_name` fields are left without the `NOT NULL` constraint to handle the possibility of people who only go by a mononym.
+
 ### Data Analysis
 1. Employee details.
     - Use a subquery in the `SELECT` clause to include the monetary value for `salary` using `emp_no`.

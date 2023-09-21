@@ -12,8 +12,7 @@ Github repository at: [https://github.com/alyssahondrade/sql-challenge.git](http
     1. [Data Modelling](https://github.com/alyssahondrade/sql-challenge/tree/main#data-modelling)
     2. [Data Engineering](https://github.com/alyssahondrade/sql-challenge/tree/main#data-engineering)
     3. [Data Analysis](https://github.com/alyssahondrade/sql-challenge/tree/main#data-analysis)
-        1. [Query Fields]
-        2. [Query Philosophy](https://github.com/alyssahondrade/sql-challenge/tree/main#query-philosophy)
+        - [Query Philosophy](https://github.com/alyssahondrade/sql-challenge/tree/main#query-philosophy)
 3. [References](https://github.com/alyssahondrade/sql-challenge/tree/main#references)
 
 ## Introduction
@@ -52,11 +51,29 @@ Inspect the CSV files and sketch an Entity Relationship Diagram (ERD).
     - `departments` & `dept_emp`: One department applies to many employees, each department can only have one department name.
     - `departments` & `dept_manager`: One department applies to many managers, each department can only have one department name.
 
-![ERD](https://github.com/alyssahondrade/sql-challenge/blob/main/ERD.png)
+| Entity-Relationship Diagram |
+|:--:|
+| ![ERD](https://github.com/alyssahondrade/sql-challenge/blob/main/ERD.png) |
+
 
 ### Data Engineering
 Create a table schema for each CSV file. Order of import:
-    `titles`, `employees`, `departments`, `salaries`, `dept_emp`, `dept_manager`
+
+`titles`, `employees`, `departments`, `salaries`, `dept_emp`, `dept_manager`
+
+Column value lengths are chosen by inspecting the columns in the given CSV files. In general:
+1. It is assumed the current character length requirement for `title_id` and `dept_no` can handle capacity for future additions (for example, maximum of 999 departments for `dept_no`).
+
+2. Name fields, such as `title`, `first_name`, `last_name`, and `dept_name`, are allocated reasonable character lengths to:
+    - Account for current requirements (i.e. minimum is met), and
+    - Allow for future additions which may be slightly longer.
+
+Reasons for `NOT NULL`:
+1. A field that is a `PRIMARY KEY` or a `FOREIGN KEY`.
+
+2. If a table only has two fields, both fields are `NOT NULL`, otherwise what is the point of that entry.
+
+3. For the `employees` table, `first_name` and `last_name` fields are left without the `NOT NULL` constraint to handle the possibility of people who only go by a mononym.
 
 ### Data Analysis
 1. Employee details.
@@ -98,33 +115,6 @@ Create a table schema for each CSV file. Order of import:
         - Store the result in a `VIEW` and create a query to `SUM` all the frequencies.
         - Compare this result to the total number of rows in the `employees` table.
 
-#### Query Fields
-Fields required in the resulting table for each question.
-
-1. Employee details
-    `employee number, last name, first name, sex, salary`
-
-2. Employeers hired in 1986
-    `first name, last name, hire date`
-
-3. Manager of each department
-    `department number, department name, employee number, last name, first name`.
-
-4. Employee with department name and number
-    `dept_no, emp_no, last_name, first_name, dept_name`
-
-5. Employee whose first name is `Hercules` and last name starts with `B`
-    `first name, last name, sex`
-
-6. Sales department employees
-    `employee number, last name, first name`
-
-7. Sales and Development departments
-    `employee number, last name, first name, department name`
-
-8. Frequency counts (descending order) of all employee last names:
-    `last_name, frequency_counts_alias`
-
 #### Query Philosophy
 1. When building the query:
     - Identify the tables required, and determine whether a join or subquery is necessary.
@@ -136,10 +126,14 @@ Fields required in the resulting table for each question.
     - If only one column is required from a different table, use __SUBQUERY__.
 
 ## References
-- [1] Data Types - Date/Time Types [https://www.postgresql.org/docs/current/datatype-datetime.html](https://www.postgresql.org/docs/current/datatype-datetime.html)
+- [1] Composite Primary Keys in PostgreSQL [https://www.commandprompt.com/education/composite-primary-keys-in-postgresql/](https://www.commandprompt.com/education/composite-primary-keys-in-postgresql/)
 
-- [2] How to Compare Dates in PostgreSQL [https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/](https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/)
+- [2] Foreign Keys [https://www.postgresql.org/docs/current/tutorial-fk.html](https://www.postgresql.org/docs/current/tutorial-fk.html)
 
-- [3] SQL Join vs Subquery [https://www.geeksforgeeks.org/sql-join-vs-subquery/](https://www.geeksforgeeks.org/sql-join-vs-subquery/)
+- [3] Data Types - Date/Time Types [https://www.postgresql.org/docs/current/datatype-datetime.html](https://www.postgresql.org/docs/current/datatype-datetime.html)
 
-- [4] How to concatenate strings of a string field in PostgreSQL 'group by' query? [https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query](https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query)
+- [4] How to Compare Dates in PostgreSQL [https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/](https://www.commandprompt.com/education/how-to-compare-dates-in-postgresql/)
+
+- [5] SQL Join vs Subquery [https://www.geeksforgeeks.org/sql-join-vs-subquery/](https://www.geeksforgeeks.org/sql-join-vs-subquery/)
+
+- [6] How to concatenate strings of a string field in PostgreSQL 'group by' query? [https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query](https://stackoverflow.com/questions/43870/how-to-concatenate-strings-of-a-string-field-in-a-postgresql-group-by-query)
